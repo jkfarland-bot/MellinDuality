@@ -1,0 +1,233 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "MellinDuality: Mellin duality for the band-parity companion"
+  description: >-
+    For an odd prime p, an odd character chi modulo p and m >= 0, the multiplier family
+    C(a) = sum over 0 < n < p/2 of chi(n) (-1)^(n + <a n^(2m)>) has Fourier transform over the
+    characters 2 sum_a conj(psi)(a) C(a) = G(conj psi) G(chi psi^(2m)), with the multiplier constant
+    G(psi) = sum_m psi(m) (-1)^m = 2 (1 - 2 psi(2)) B_(1,psi). The development proves this Mellin
+    duality over any commutative ring, its inversion over the odd complex characters and its form
+    bilinear in first Bernoulli numbers, the half-sum identity, the exponent family and its two
+    collapses. At p = 5 (mod 8), for the quartic character, it proves the coset decomposition of the
+    family, its exact sums over the cosets of the fourth powers, conjugate dynamics, the two
+    second-moment identities, the decomposition of the second-order products of the band-parity
+    companion by coprime pairs, and Parseval's identity for the band weight.
+  authors:
+    - "Joseph S. Farland"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - "Joseph S. Farland"
+
+classification:
+  arxiv: ["math.NT"]
+  msc2020: ["11L40", "11A15", "11B68", "68V20"]
+
+sources:
+  - title: "Mellin duality for the band-parity companion, formalized in Lean"
+    authors:
+      - "Joseph S. Farland"
+    type: "article"
+    location: "Preprint, Zenodo, 2026"
+    relationship: "formalizes"
+    note: >-
+      The companion paper of this formalization, by the same author. It restates the formalized
+      results of the manuscript below with proofs that follow the formal ones, and gives the
+      correspondence between the manuscript, the paper and the Lean names.
+    license: "CC-BY-4.0"
+    author_endorsement: "participated"
+  - title: "What the band-parity companion is: Mellin duality, Weil sums, and the Gauss-sum axis"
+    authors:
+      - "Joseph S. Farland"
+    type: "article"
+    location: "Preprint (Paper II of the author's series), 2026"
+    relationship: "formalizes"
+    note: >-
+      The paper and this formalization have the same author. Formalized: (1), Lemma 2.1,
+      Theorem 3.1, Corollaries 3.2 and 3.3, Propositions 4.1, 4.2, 6.3 (the exact identities) and
+      7.1. Not formalized: Theorem 5.1, Lemma 5.2, Prediction 5.3, Lemma 6.2, Proposition 6.4,
+      Conjecture 6.1, Question 5.8 and the observations. On novelty: the half-sum identity (1) is
+      classical; Mellin duality is a direct substitution, and what the author claims as new is the
+      multiplier family and the bilinear formula, found nowhere in the literature searched
+      (Louboutin's mean values of products of L-functions, arXiv:2405.17981, and his subgroup mean
+      values, of which the coset trace is the band-parity analogue).
+    license: "CC-BY-4.0"
+    author_endorsement: "participated"
+  - title: "Dedekind sums and mean square value of L(1, chi) over subgroups"
+    authors:
+      - "S. Louboutin"
+    type: "article"
+    location: "arXiv:2406.02802, 2024"
+    relationship: "background"
+    note: "The coset trace (Corollary 3.3) is the band-parity analogue of the subgroup formula (6)."
+    license: "unknown"
+    author_endorsement: "n/a"
+
+related_formalizations:
+  - id: "https://doi.org/10.5281/zenodo.23752170"
+    relationship: "builds-on"
+    note: "BandParityTower by the same author (Paper I, Sections 4 and 5). Its file Basic is copied here and renamed into the MellinDuality namespace."
+  - id: "https://doi.org/10.5281/zenodo.23673067"
+    relationship: "builds-on"
+    note: "BandParity by the same author (Paper I, Theorem A), where the parity dictionary and the band-parity sum first appear."
+
+status:
+  scope: >-
+    Formalized: the results listed under alignment. Not formalized: the Weil-sum expansion
+    (Theorem 5.1), which needs the functional equation and the convergence of L(1, psi); the
+    self-duality lemma (Lemma 5.2); the diagonal model (Prediction 5.3); the band-sum bounds
+    (Lemma 6.2) and Proposition 6.4, which need Weil's bound; Conjecture 6.1, Question 5.8 and the
+    observations.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: []
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["Claude (Anthropic)"]
+      framework: "Claude.ai with code execution"
+      tool_setup: >-
+        AI-assisted: the Lean code was drafted and repaired by Claude against the paper's
+        statements and proofs, compiled locally with lake, and the export of Solution was checked
+        with the Lean kernel, nanoda and con-ron.
+      cost:
+        wall_time: "about one day"
+        spend_usd: "subscription-based"
+        hardware: "API-only plus local machine"
+      prompting_notes: "The model was given the paper's statements and proofs and asked to formalize them without sorry or native_decide."
+  spend_usd: "subscription-based"
+  notes: >-
+    The author chose the scope (the proved, finite part of Paper II: Sections 2 to 4, the exact
+    identities of Proposition 6.3, and Proposition 7.1).
+
+fidelity:
+  divergences: >-
+    Mellin duality, the multiplier constant, the parity dictionary and the collapses are stated for
+    MulChar (ZMod p) R in any commutative ring, with conj(psi) = psi^-1; the inversion is stated for
+    DirichletCharacter C p. Sums over units run over all of ZMod p (characters vanish at 0), and the
+    half system includes n = 0. The exponent family is proved for every odd character modulo every
+    odd prime. The cosets H, 2H, -H, -2H are the fibres of chi_4 over 1, i, -1, -i, and
+    cosets_as_fibers proves this (with chi_4(2) = i for 2H). B_(1,psi) is T psi / p and the half-sum
+    identity is stated multiplied out. Parseval is stated with the norm in C and for every weight
+    with w(n)^2 = 1.
+
+review:
+  status: "self-assessed"
+  reviewers:
+    - "Joseph S. Farland"
+  notes: >-
+    The definitions in Challenge.lean are copied verbatim from the development and compared by
+    Comparator. The statements were checked against the paper by an independent AI review. No
+    external referee has reviewed the paper or the formalization.
+
+alignment:
+  namespace: "MellinDuality"
+  statements:
+    - source: "Section 2, the half sums of the multiplier constant"
+      lean: "MellinDuality.multiplier_constant_half"
+      module: "Challenge"
+      status: "proved"
+    - source: "Section 2, G(phi) = 0 for even phi"
+      lean: "MellinDuality.multiplier_constant_even"
+      module: "Challenge"
+      status: "proved"
+    - source: "(1), classical input: the half-sum identity p G(psi) = 2 (1 - 2 psi(2)) T(psi)"
+      lean: "MellinDuality.half_sum_identity"
+      module: "Challenge"
+      status: "proved"
+    - source: "(1), G(psi) = 2 (1 - 2 psi(2)) B_{1,psi} for complex psi"
+      lean: "MellinDuality.multiplier_constant_bern"
+      module: "Challenge"
+      status: "proved"
+    - source: "Theorem 3.1 (forward form, exponent 2m of Corollary 3.2)"
+      lean: "MellinDuality.mellin_duality"
+      module: "Challenge"
+      status: "proved"
+    - source: "Theorem 3.1 (inversion, exponent 2m)"
+      lean: "MellinDuality.mellin_duality_inverse"
+      module: "Challenge"
+      status: "proved"
+    - source: "Theorem 3.1, Bernoulli form"
+      lean: "MellinDuality.mellin_duality_bernoulli"
+      module: "Challenge"
+      status: "proved"
+    - source: "Theorem 3.1, last display (chi(2) = i)"
+      lean: "MellinDuality.mellin_duality_quartic"
+      module: "Challenge"
+      status: "proved"
+    - source: "Section 2 (Paper I, Lemma 2.5), the parity dictionary"
+      lean: "MellinDuality.parity_dictionary"
+      module: "Challenge"
+      status: "proved"
+    - source: "Corollary 3.2, the dual formula"
+      lean: "MellinDuality.exponent_family_dual"
+      module: "Challenge"
+      status: "proved"
+    - source: "Corollary 3.2, collapse when (p - 1) | 2m"
+      lean: "MellinDuality.exponent_collapse_first"
+      module: "Challenge"
+      status: "proved"
+    - source: "Corollary 3.2, collapse when (p - 1) | 4m and not (p - 1) | 2m"
+      lean: "MellinDuality.exponent_collapse_second"
+      module: "Challenge"
+      status: "proved"
+    - source: "Section 2, the cosets H, 2H, -H, -2H as fibres of chi_4"
+      lean: "MellinDuality.cosets_as_fibers"
+      module: "Challenge"
+      status: "proved"
+    - source: "Lemma 2.1"
+      lean: "MellinDuality.coset_decomposition"
+      module: "Challenge"
+      status: "proved"
+    - source: "Section 2 and (1): G(chi_4) = 2 gamma, gamma = (1 - 2i) beta"
+      lean: "MellinDuality.gamma_identities"
+      module: "Challenge"
+      status: "proved"
+    - source: "Corollary 3.2, the terminal values (quartic case)"
+      lean: "MellinDuality.exponent_terminal_values"
+      module: "Challenge"
+      status: "proved"
+    - source: "Corollary 3.3, the coset trace"
+      lean: "MellinDuality.coset_trace_values"
+      module: "Challenge"
+      status: "proved"
+    - source: "Corollary 3.3, second form"
+      lean: "MellinDuality.coset_trace_second"
+      module: "Challenge"
+      status: "proved"
+    - source: "Corollary 3.3, the family means A^2 and -AB"
+      lean: "MellinDuality.family_mean_values"
+      module: "Challenge"
+      status: "proved"
+    - source: "Proposition 4.1"
+      lean: "MellinDuality.conjugate_dynamics_squaring"
+      module: "Challenge"
+      status: "proved"
+    - source: "Proposition 4.2"
+      lean: "MellinDuality.second_moments"
+      module: "Challenge"
+      status: "proved"
+    - source: "Proposition 6.3 (proof), the gcd decomposition"
+      lean: "MellinDuality.gcd_decomposition"
+      module: "Challenge"
+      status: "proved"
+    - source: "Section 6, C as a sum over n <= (p - 1)/2"
+      lean: "MellinDuality.band_sum_interval"
+      module: "Challenge"
+      status: "proved"
+    - source: "Proposition 6.3"
+      lean: "MellinDuality.pair_structure_identities"
+      module: "Challenge"
+      status: "proved"
+    - source: "Proposition 7.1"
+      lean: "MellinDuality.parseval_identity"
+      module: "Challenge"
+      status: "proved"
+    - source: "Proposition 7.1 for any weight with w(n)^2 = 1"
+      lean: "MellinDuality.parseval_any_weight"
+      module: "Challenge"
+      status: "proved"
+
+acknowledgements: "Lean 4 and Mathlib; Claude (Anthropic) for formalization assistance; the Palomar starter template for the check scripts."
