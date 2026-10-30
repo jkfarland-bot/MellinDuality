@@ -81,8 +81,9 @@ substitution; what is new is the multiplier family and the bilinear formula
 L-functions (arXiv:2405.17981), where no character appears squared and no sum is twisted by `ψ(a)`.
 The coset trace is the band-parity analogue of Louboutin's evaluation of sums of Dedekind sums over a
 subgroup (Bull. Pol. Acad. Sci. Math. 64 (2016); arXiv:2406.02802). The gcd decomposition and
-Parseval are standard. The Bernoulli mean square combines the duality with Parseval over the odd characters; it is
-not in Paper II, and we found it in none of the literature searched.
+Parseval are standard. The Bernoulli mean square is not in Paper II; it is an immediate corollary of
+the inversion and Parseval over the odd characters, its constant does not depend on `a` or on the
+weight, and no novelty is claimed for it.
 
 ## Authorship, AI assistance and licence
 
