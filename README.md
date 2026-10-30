@@ -11,7 +11,9 @@ It continues [BandParity](https://github.com/jkfarland-bot/bandparity) and
 [BandParityTower](https://github.com/jkfarland-bot/Bandparitytower), which formalized Paper I.
 
 The companion paper is J. S. Farland, *Mellin duality for the band-parity companion, formalized in
-Lean* (preprint, Zenodo, 2026; DOI to be added).
+Lean* (preprint, Zenodo, 2026; v1.0
+[doi:10.5281/zenodo.23796263](https://doi.org/10.5281/zenodo.23796263), all versions
+[doi:10.5281/zenodo.23796262](https://doi.org/10.5281/zenodo.23796262)).
 
 For an odd prime `p`, characters `χ`, `ψ` modulo `p`, `s(x) = (-1)^⟨x⟩` and `m ≥ 0` put
 

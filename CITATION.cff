@@ -4,6 +4,7 @@ title: "MellinDuality: a Lean 4 formalization of Mellin duality for the band-par
 authors:
   - family-names: Farland
     given-names: Joseph S.
+    orcid: "https://orcid.org/0009-0007-6809-804X"
 version: v1.0
 doi: 10.5281/zenodo.23795143
 license: Apache-2.0
@@ -16,3 +17,15 @@ keywords:
   - Lean 4
   - Mathlib
   - formal verification
+preferred-citation:
+  type: article
+  title: "Mellin duality for the band-parity companion, formalized in Lean"
+  authors:
+    - family-names: Farland
+      given-names: Joseph S.
+      orcid: "https://orcid.org/0009-0007-6809-804X"
+  year: 2026
+  doi: 10.5281/zenodo.23796262
+  publisher:
+    name: Zenodo
+  notes: "Preprint, version v1.0: doi:10.5281/zenodo.23796263"
