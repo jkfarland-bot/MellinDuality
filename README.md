@@ -1,5 +1,10 @@
 # MellinDuality
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23795143.svg)](https://doi.org/10.5281/zenodo.23795143)
+
+Software archive: version v1.0 is [doi:10.5281/zenodo.23795144](https://doi.org/10.5281/zenodo.23795144);
+all versions are [doi:10.5281/zenodo.23795143](https://doi.org/10.5281/zenodo.23795143).
+
 Lean 4 / Mathlib formalization of the proved, finite part of J. S. Farland, *What the band-parity
 companion is: Mellin duality, Weil sums, and the Gauss-sum axis* (Paper II of the author's series).
 It continues [BandParity](https://github.com/jkfarland-bot/bandparity) and
