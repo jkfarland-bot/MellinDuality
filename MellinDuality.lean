@@ -7,3 +7,4 @@ public import MellinDuality.Mellin
 public import MellinDuality.Quartic
 public import MellinDuality.Parseval
 public import MellinDuality.Pairs
+public import MellinDuality.MeanSquare

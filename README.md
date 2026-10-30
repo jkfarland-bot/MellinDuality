@@ -39,6 +39,12 @@ companion of a quartic L-value. This repository proves:
   (Proposition 4.2).
 - **The pair structure** (Proposition 6.3): `𝒞S̄`, `𝒞S`, `|𝒞|²`, `𝒞²` as exact sums over coprime pairs,
   and **Parseval** (Proposition 7.1): `∑_ψ |∑_{n≤N} ψ(n) ε_n|² = (p-1)N`.
+- **The Bernoulli mean square** (companion paper v2, Theorem 7.3; new in v1.1). For every odd prime
+  `p` and `a ≢ 0`, with `X_χ(a) = ∑_{ψ odd} ψ(a)(1 - 2ψ̄(2))(1 - 2χ(2)ψ(2)²) B_{1,ψ̄} B_{1,χψ²}`,
+  `∑_{χ odd} |X_χ(a)|² = ((p-1)/2)⁴`. The proof combines the inversion `X_χ(a) = ((p-1)/2) 𝒞_χ(a)`
+  with Parseval over the odd characters (Proposition 7.2), using that `𝒞_χ(a)` is a sum over
+  `n ≤ (p-1)/2` with a `±1` weight (Lemma 7.1). This result is not in Paper II: it was proposed by
+  Claude during the formalization and adopted by the author.
 
 Toolchain: `leanprover/lean4:v4.35.0`, Mathlib `v4.35.0`.
 
@@ -75,7 +81,8 @@ substitution; what is new is the multiplier family and the bilinear formula
 L-functions (arXiv:2405.17981), where no character appears squared and no sum is twisted by `ψ(a)`.
 The coset trace is the band-parity analogue of Louboutin's evaluation of sums of Dedekind sums over a
 subgroup (Bull. Pol. Acad. Sci. Math. 64 (2016); arXiv:2406.02802). The gcd decomposition and
-Parseval are standard.
+Parseval are standard. The Bernoulli mean square combines the duality with Parseval over the odd characters; it is
+not in Paper II, and we found it in none of the literature searched.
 
 ## Authorship, AI assistance and licence
 
@@ -86,7 +93,7 @@ under the Apache License 2.0 (`LICENSE`); the paper is CC BY 4.0.
 ## Layout for the Palomar registry
 
 - `Challenge.lean` is the statement surface to audit. It restates the definitions exactly as the
-  development has them and states the 26 results with `sorry`.
+  development has them and states the 29 results with `sorry`.
 - `Solution.lean` proves the same declarations from the development in `MellinDuality/`.
 - `comparator.json` lists the compared theorems and definitions and the permitted axioms.
 - `formalization.yaml` records authorship, sources, AI assistance, scope and fidelity.
@@ -112,6 +119,9 @@ ruby scripts/validate-formalization.rb
 | Proposition 4.2 | `second_moments` |
 | Proposition 6.3 | `gcd_decomposition`, `band_sum_interval`, `pair_structure_identities` |
 | Proposition 7.1 | `parseval_identity`, `parseval_any_weight` |
+| companion paper v2, Lemma 7.1 | `multiplier_family_interval` |
+| companion paper v2, Proposition 7.2 | `parseval_odd_characters` |
+| companion paper v2, Theorem 7.3 | `bernoulli_mean_square_identity` |
 
 ## Files
 
@@ -124,3 +134,4 @@ ruby scripts/validate-formalization.rb
 | `Quartic` | cosets as fibres, the coset lemma and trace, conjugate dynamics, second moments |
 | `Parseval` | Proposition 7.1 |
 | `Pairs` | the gcd decomposition and Proposition 6.3 |
+| `MeanSquare` | the family on an interval, Parseval over the odd characters, the Bernoulli mean square |

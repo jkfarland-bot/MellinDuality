@@ -5,7 +5,7 @@ authors:
   - family-names: Farland
     given-names: Joseph S.
     orcid: "https://orcid.org/0009-0007-6809-804X"
-version: v1.0
+version: v1.1
 doi: 10.5281/zenodo.23795143
 license: Apache-2.0
 repository-code: "https://github.com/jkfarland-bot/MellinDuality"
@@ -28,4 +28,4 @@ preferred-citation:
   doi: 10.5281/zenodo.23796262
   publisher:
     name: Zenodo
-  notes: "Preprint, version v1.0: doi:10.5281/zenodo.23796263"
+  notes: "Preprint; version v1.0 is doi:10.5281/zenodo.23796263"

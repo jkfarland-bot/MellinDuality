@@ -208,6 +208,29 @@ theorem parseval_any_weight (w : ℕ → ℤ) (hw : ∀ n, w n * w n = 1) :
       ((p : ℝ) - 1) * ((p - 1) / 2 : ℕ) :=
   parseval_general w hw
 
+/-- Every member of the multiplier family is a half-interval sum with a `±1` weight:
+`𝒞_χ^{(2)}(a) = ∑_{n ≤ (p-1)/2} χ(n) (-1)^{n + ⟨a n²⟩}`. -/
+theorem multiplier_family_interval (hp2 : p ≠ 2) {R : Type*} [CommRing R] (χ : MulChar (ZMod p) R)
+    (a : ZMod p) :
+    fam χ 2 a = ∑ n ∈ Icc 1 ((p - 1) / 2), χ (n : ZMod p) *
+      (((-1 : ℤ) ^ ((n : ZMod p).val + (a * (n : ZMod p) ^ 2).val) : ℤ) : R) :=
+  fam_eq_Icc hp2 χ a
+
+/-- Parseval over the odd characters, for any weight with `w(n)² = 1`:
+`∑_{χ odd} |∑_{n ≤ N} χ(n) w(n)|² = ((p - 1)/2) N`, `N = (p - 1)/2`. -/
+theorem parseval_odd_characters (w : ℕ → ℤ) (hw : ∀ n, w n * w n = 1) :
+    ∑ ψ ∈ oddChars p, ‖∑ n ∈ Icc 1 ((p - 1) / 2), ψ n * (w n : ℂ)‖ ^ 2 =
+      ((p : ℝ) - 1) / 2 * ((p - 1) / 2 : ℕ) :=
+  parseval_odd w hw
+
+/-- **The Bernoulli mean square** (companion paper, Theorem 7.3). For an odd prime `p` and
+`a ≠ 0`, `∑_{χ odd} |∑_{ψ odd} ψ(a) (1 - 2ψ̄(2)) (1 - 2χ(2)ψ(2)²) B_{1,ψ̄} B_{1,χψ²}|² = ((p-1)/2)⁴`. -/
+theorem bernoulli_mean_square_identity (hp2 : p ≠ 2) {a : ZMod p} (ha : a ≠ 0) :
+    ∑ χ ∈ oddChars p, ‖∑ ψ ∈ oddChars p, ψ a * (1 - 2 * ψ⁻¹ 2) *
+        (1 - 2 * χ 2 * ψ 2 ^ 2) * bern ψ⁻¹ * bern (χ * ψ ^ 2)‖ ^ 2 =
+      (((p : ℝ) - 1) / 2) ^ 4 :=
+  bernoulli_mean_square hp2 ha
+
 end Statements
 
 end MellinDuality

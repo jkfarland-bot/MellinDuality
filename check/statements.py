@@ -78,6 +78,21 @@ for p in primerange(3, 140):
     N = (p - 1) // 2
     tot = sum(abs(sum(mk(j)(n) * (-1) ** ((n * n) // p) for n in range(1, N + 1))) ** 2 for j in range(p - 1))
     if abs(tot - (p - 1) * N) > 1e-6: F('parseval')
+    # Parseval over the odd characters, the interval form of the family, and the Bernoulli mean square
+    oddj = [j for j in range(p - 1) if j % 2 == 1]
+    bern = lambda f: T(f, p) / p
+    for a in (1, 2, p - 1):
+        wa = lambda n, a=a: (-1) ** (n + (a * n * n) % p)
+        tot_odd = sum(abs(sum(mk(j)(n) * wa(n) for n in range(1, N + 1))) ** 2 for j in oddj)
+        if abs(tot_odd - (p - 1) / 2 * N) > 1e-6: F('parseval_odd')
+        ms = 0
+        for jc in oddj:
+            chi = mk(jc)
+            if not close(fam(chi, 2, a, p), sum(chi(n) * wa(n) for n in range(1, N + 1))): F('family_interval')
+            X = sum(mk(j)(a) * (1 - 2 * mk(-j)(2)) * (1 - 2 * chi(2) * mk(j)(2) ** 2)
+                    * bern(mk(-j)) * bern(mk(jc + 2 * j)) for j in oddj)
+            ms += abs(X) ** 2
+        if abs(ms - ((p - 1) / 2) ** 4) > 1e-6 * ((p - 1) / 2) ** 4: F('bernoulli_mean_square')
 
 # The quartic statements, exactly, at p = 5 (mod 8)
 I = 1j

@@ -13,7 +13,10 @@ project:
     collapses. At p = 5 (mod 8), for the quartic character, it proves the coset decomposition of the
     family, its exact sums over the cosets of the fourth powers, conjugate dynamics, the two
     second-moment identities, the decomposition of the second-order products of the band-parity
-    companion by coprime pairs, and Parseval's identity for the band weight.
+    companion by coprime pairs, and Parseval's identity for the band weight. Through the inversion and
+    Parseval's identity over the odd characters it proves, for every a not divisible by p, the exact
+    second moment sum over odd chi of |sum over odd psi of psi(a) (1 - 2 conj(psi)(2))
+    (1 - 2 chi(2) psi(2)^2) B_(1,conj psi) B_(1,chi psi^2)|^2 = ((p - 1)/2)^4.
   authors:
     - "Joseph S. Farland"
   license: "Apache-2.0"
@@ -29,12 +32,15 @@ sources:
     authors:
       - "Joseph S. Farland"
     type: "article"
-    location: "Preprint, Zenodo, 2026, https://doi.org/10.5281/zenodo.23796263 (v1.0); all versions https://doi.org/10.5281/zenodo.23796262"
+    location: "Preprint, Zenodo, 2026, all versions https://doi.org/10.5281/zenodo.23796262 (v1.0 is https://doi.org/10.5281/zenodo.23796263; version 2 adds Section 7)"
     relationship: "formalizes"
     note: >-
       The companion paper of this formalization, by the same author. It restates the formalized
       results of the manuscript below with proofs that follow the formal ones, and gives the
-      correspondence between the manuscript, the paper and the Lean names.
+      correspondence between the manuscript, the paper and the Lean names. Version 2 adds Section 7,
+      the Bernoulli mean square (Lemma 7.1, Proposition 7.2, Theorem 7.3), which is not in the
+      manuscript: it was proposed by Claude during the formalization, in response to review comments
+      on the registry submission, and was checked numerically and adopted by the author.
     license: "CC-BY-4.0"
     author_endorsement: "participated"
   - title: "What the band-parity companion is: Mellin duality, Weil sums, and the Gauss-sum axis"
@@ -100,7 +106,8 @@ automation:
   spend_usd: "subscription-based"
   notes: >-
     The author chose the scope (the proved, finite part of Paper II: Sections 2 to 4, the exact
-    identities of Proposition 6.3, and Proposition 7.1).
+    identities of Proposition 6.3, and Proposition 7.1). Version 1.1 adds the Bernoulli mean square
+    (companion paper, Section 7), proposed by Claude and adopted by the author.
 
 fidelity:
   divergences: >-
@@ -111,7 +118,9 @@ fidelity:
     odd prime. The cosets H, 2H, -H, -2H are the fibres of chi_4 over 1, i, -1, -i, and
     cosets_as_fibers proves this (with chi_4(2) = i for 2H). B_(1,psi) is T psi / p and the half-sum
     identity is stated multiplied out. Parseval is stated with the norm in C and for every weight
-    with w(n)^2 = 1.
+    with w(n)^2 = 1. In the Bernoulli mean square the sums over the odd characters are sums over the
+    finite set oddChars p, and the weight of the family on an interval is written
+    (-1)^(<n> + <a n^2>) with n cast to ZMod p.
 
 review:
   status: "self-assessed"
@@ -227,6 +236,18 @@ alignment:
       status: "proved"
     - source: "Proposition 7.1 for any weight with w(n)^2 = 1"
       lean: "MellinDuality.parseval_any_weight"
+      module: "Challenge"
+      status: "proved"
+    - source: "Companion paper, version 2, Lemma 7.1 (the family on an interval)"
+      lean: "MellinDuality.multiplier_family_interval"
+      module: "Challenge"
+      status: "proved"
+    - source: "Companion paper, version 2, Proposition 7.2 (Parseval over the odd characters)"
+      lean: "MellinDuality.parseval_odd_characters"
+      module: "Challenge"
+      status: "proved"
+    - source: "Companion paper, version 2, Theorem 7.3 (the Bernoulli mean square)"
+      lean: "MellinDuality.bernoulli_mean_square_identity"
       module: "Challenge"
       status: "proved"
 

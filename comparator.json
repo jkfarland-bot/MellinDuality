@@ -27,7 +27,10 @@
     "MellinDuality.band_sum_interval",
     "MellinDuality.pair_structure_identities",
     "MellinDuality.parseval_identity",
-    "MellinDuality.parseval_any_weight"
+    "MellinDuality.parseval_any_weight",
+    "MellinDuality.multiplier_family_interval",
+    "MellinDuality.parseval_odd_characters",
+    "MellinDuality.bernoulli_mean_square_identity"
   ],
   "definition_names": [
     "MellinDuality.gi",
