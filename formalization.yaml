@@ -32,7 +32,7 @@ sources:
     authors:
       - "Joseph S. Farland"
     type: "article"
-    location: "Preprint, Zenodo, 2026, all versions https://doi.org/10.5281/zenodo.23796262 (v1.0 is https://doi.org/10.5281/zenodo.23796263; version 2 adds Section 7)"
+    location: "Preprint, Zenodo, 2026, all versions https://doi.org/10.5281/zenodo.23796262 (v1.0 is https://doi.org/10.5281/zenodo.23796263; version 2, which adds Section 7, is https://doi.org/10.5281/zenodo.23850482)"
     relationship: "formalizes"
     note: >-
       The companion paper of this formalization, by the same author. It restates the formalized

@@ -3,7 +3,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23795143.svg)](https://doi.org/10.5281/zenodo.23795143)
 
 Software archive: version v1.0 is [doi:10.5281/zenodo.23795144](https://doi.org/10.5281/zenodo.23795144);
-all versions are [doi:10.5281/zenodo.23795143](https://doi.org/10.5281/zenodo.23795143).
+version v1.1 is [doi:10.5281/zenodo.23850428](https://doi.org/10.5281/zenodo.23850428); all versions are [doi:10.5281/zenodo.23795143](https://doi.org/10.5281/zenodo.23795143).
 
 Lean 4 / Mathlib formalization of the proved, finite part of J. S. Farland, *What the band-parity
 companion is: Mellin duality, Weil sums, and the Gauss-sum axis* (Paper II of the author's series).
@@ -12,7 +12,8 @@ It continues [BandParity](https://github.com/jkfarland-bot/bandparity) and
 
 The companion paper is J. S. Farland, *Mellin duality for the band-parity companion, formalized in
 Lean* (preprint, Zenodo, 2026; v1.0
-[doi:10.5281/zenodo.23796263](https://doi.org/10.5281/zenodo.23796263), all versions
+[doi:10.5281/zenodo.23796263](https://doi.org/10.5281/zenodo.23796263), v2.0
+[doi:10.5281/zenodo.23850482](https://doi.org/10.5281/zenodo.23850482), all versions
 [doi:10.5281/zenodo.23796262](https://doi.org/10.5281/zenodo.23796262)).
 
 For an odd prime `p`, characters `χ`, `ψ` modulo `p`, `s(x) = (-1)^⟨x⟩` and `m ≥ 0` put
