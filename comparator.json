@@ -32,27 +32,7 @@
     "MellinDuality.parseval_odd_characters",
     "MellinDuality.bernoulli_mean_square_identity"
   ],
-  "definition_names": [
-    "MellinDuality.gi",
-    "MellinDuality.parSign",
-    "MellinDuality.half",
-    "MellinDuality.fam",
-    "MellinDuality.G",
-    "MellinDuality.T",
-    "MellinDuality.bern",
-    "MellinDuality.bandSignE",
-    "MellinDuality.bandSumPow",
-    "MellinDuality.oddChars",
-    "MellinDuality.fiber",
-    "MellinDuality.sigma",
-    "MellinDuality.gamma",
-    "MellinDuality.multCorr",
-    "MellinDuality.eps",
-    "MellinDuality.quadR",
-    "MellinDuality.halfSum",
-    "MellinDuality.coprimePairs",
-    "MellinDuality.pairRange"
-  ],
+  "definition_names": [],
   "permitted_axioms": [
     "propext",
     "Quot.sound",
