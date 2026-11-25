@@ -1,0 +1,36 @@
+{
+  "title": "MellinDuality: a Lean 4 formalization of Mellin duality for the band-parity companion",
+  "upload_type": "software",
+  "creators": [
+    {
+      "name": "Farland, Joseph S.",
+      "orcid": "0009-0007-6809-804X"
+    }
+  ],
+  "license": "Apache-2.0",
+  "keywords": [
+    "Dirichlet characters",
+    "Bernoulli numbers",
+    "character sums",
+    "quartic characters",
+    "Lean 4",
+    "Mathlib",
+    "formal verification"
+  ],
+  "description": "<p>Lean 4 / Mathlib formalization accompanying J. S. Farland, \"Mellin duality for the band-parity companion, formalized in Lean\" (doi:10.5281/zenodo.23796262).</p>\n<p>For an odd prime p and an odd character chi, the multiplier family C_chi(a) = sum over 0 &lt; n &lt; p/2 of chi(n)(-1)^(n + &lt;a n^2&gt;) has, at a = 1 and for the quartic character, the band-parity companion of a quartic L-value. Its Fourier transform over the characters is a product of two multiplier constants G(psi) = sum of psi(m)(-1)^m, which is 2(1 - 2 psi(2)) B_{1,psi} for odd psi and 0 for even psi, so the family is bilinear in first Bernoulli numbers.</p>\n<p>The development proves: this Mellin duality and its inversion; the same statement for every even exponent n^(2m), with the collapse at the degenerate exponents; for the quartic character at p = 5 (mod 8): the coset lemma, the coset trace, the family means, the conjugate dynamics and the two second-moment identities; the decomposition of second-order products by coprime pairs, and Parseval's identity.</p>\n<p>The development also proves the Bernoulli mean square: the sum over odd chi of |X_chi(a)|^2 is ((p-1)/2)^4. This is a corollary of the inversion and Parseval's identity over the odd characters, and no novelty is claimed for it.</p>\n<p>The statements are in Challenge.lean. Lean's comparator checks them against the proofs, with the definition bodies compared, and the proofs are replayed in the Lean, nanoda and con-ron kernels. No sorry, no native_decide; standard axioms only. The changes in each version are described in the release notes on GitHub: <a href=\"https://github.com/jkfarland-bot/MellinDuality/releases\">github.com/jkfarland-bot/MellinDuality/releases</a>.</p>",
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.23796262",
+      "relation": "isSupplementTo",
+      "scheme": "doi",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "https://github.com/jkfarland-bot/MellinDuality",
+      "relation": "isSupplementTo",
+      "scheme": "url",
+      "resource_type": "software"
+    }
+  ],
+  "notes": "AI assistance: the Lean code in this record was drafted and repaired by Claude (Anthropic), an AI model, from the statements and proofs of the companion paper \"Mellin duality for the band-parity companion, formalized in Lean\" (doi:10.5281/zenodo.23796262), and compiled locally with lake. Every proof is checked by the Lean kernel, and Comparator replays the solution against the statement file under the Lean, NanoDa and con-ron kernels. The author, Joseph S. Farland, chose the scope, directed the work, and is responsible for the contents. No external human reviewer has checked the formalization."
+}
